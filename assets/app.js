@@ -8,32 +8,33 @@
     messagingSenderId: "988140441751"
   };
 
-
+  //Initialize Firebase
   firebase.initializeApp(config);
 
-  // Create a variable to reference the database.
+  //Create a variable to reference the database.
   var database = firebase.database();
 
-  // Initial Variables
+  //Initial Variables
   var name = "";
   var role = "";
   var start_date = "";
   var monthly_rate = "";
-  console.log(name);
 
 
-
+//OnClick function to submit data to Firebase.
 $("#submit").on("click", function(event) {
   event.preventDefault();
 
-  // Grabbed values from text boxes
+
+
+  //Grabbed values from text boxes.
   name = $("#employeeName").val().trim();
   role = $("#employeeRole").val().trim();
   start_date = $("#startDate").val().trim();
   monthly_rate = $("#monthlyRate").val().trim();
 
 
-  // Code for handling the push
+  //Code for handling the push of data.
   database.ref().push({
     name: name,
     role: role,
@@ -41,6 +42,27 @@ $("#submit").on("click", function(event) {
     monthly_rate: monthly_rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
 });
+
+  database.ref().on("child_added", function(snapshot) {
+    // Log everything that's coming out of snapshot
+    //console.log(snapshot.val());
+    //console.log(snapshot.val().name);
+    //console.log(snapshot.val().role);
+    //console.log(snapshot.val().start_date);
+    //console.log(snapshot.val().monthly_rate);
+
+    /* Change the HTML to reflect
+    $("#name-display").text(snapshot.val().name);
+    $("#email-display").text(snapshot.val().email);
+    $("#age-display").text(snapshot.val().age);
+    $("#comment-display").text(snapshot.val().comment);*/
+
+    // Handle the errors
+  }, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
+
+
 
 
 
