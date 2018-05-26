@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 //Initialize Firebase
   var config = {
     apiKey: "AIzaSyDIkqoeImNZjQYXjEzH9-jAqVh3EvUFrK8",
@@ -11,3 +12,9 @@
 
 
   firebase.initializeApp(config);
+=======
+
+$(".submit").click(function () {
+
+});
+>>>>>>> cc2fe44a3eb493f0c044f6b5a0dd1fa5530cf474
