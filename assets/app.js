@@ -1,6 +1,6 @@
 //Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDIkqoeImNZjQYXjEzH9-jAqVh3EvUFrK8",
+    apiKey: "",
     authDomain: "timesheet-851e3.firebaseapp.com",
     databaseURL: "https://timesheet-851e3.firebaseio.com",
     projectId: "timesheet-851e3",
