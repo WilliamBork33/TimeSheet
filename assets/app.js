@@ -1,6 +1,7 @@
 //Initialize Firebase
   var config = {
-    //apiKey left blank so users can input their own via the .env_example file.
+    //apiKey for Firebase testing database.
+    //Users will leave apiKey blank so they can input their own Firebase apiKey via the .env_example file.
     apiKey: "AIzaSyDIkqoeImNZjQYXjEzH9-jAqVh3EvUFrK8",
     authDomain: "timesheet-851e3.firebaseapp.com",
     databaseURL: "https://timesheet-851e3.firebaseio.com",
