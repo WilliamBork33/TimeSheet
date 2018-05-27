@@ -1,5 +1,6 @@
 //Initialize Firebase
   var config = {
+    //apiKey left blank so users can input their own via the .env_example file.
     apiKey: "",
     authDomain: "timesheet-851e3.firebaseapp.com",
     databaseURL: "https://timesheet-851e3.firebaseio.com",
@@ -26,7 +27,6 @@ $("#submit").on("click", function(event) {
   event.preventDefault();
 
 
-
   //Grabbed values from text boxes.
   name = $("#employeeName").val().trim();
   role = $("#employeeRole").val().trim();
@@ -42,6 +42,7 @@ $("#submit").on("click", function(event) {
     monthly_rate: monthly_rate,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
 });
+
 
   database.ref().on("child_added", function(snapshot) {
     // Log everything that's coming out of snapshot
@@ -61,9 +62,6 @@ $("#submit").on("click", function(event) {
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-
-
-
 
 
 });
