@@ -1,7 +1,7 @@
 # TimeSheet
 - A data collection form that submits data to a Firebase database.
 
-- Includes a shared Firebase API key which is included in the JS file.
+- Includes a shared Firebase API key for testing - which is included in the JS file.
 
 - Includes an .env file named "env-example" to allow users to input their own Firebase API keys.
 
